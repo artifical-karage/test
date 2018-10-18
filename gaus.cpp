@@ -1,28 +1,35 @@
 #include <stdio.h>
 #include <math.h>
 #define N 3
-#define N1 3
 #define EPSILON 1.0E-5
 
+/*
+	â€ëË1
+	5S-J  No.07  éÅñºãvï€ìcóIÍ§
+*/
 
-float a[N][N] ={ {1,2,-2},
-		 {2,-2,5},
-		 {-1,1,3} };
-		  		 
-float b[N] = {-3,6,8};
-float x[N];
 
-void swap(float *wk1, float *wk2);
-int sweep();
+void swap(double *wk1, double *wk2);
+int sweep(double a[][N], double b[], double x[]);
 
 int main (void){
 
 	int sc;
+	int i;
+	double a[N][N] ={ {1,2,-2},
+		 {2,-2,5},
+		 {-1,1,3} };
+		  		 
+	double b[N] = {-3,6,8};
+	double x[N];
 	
-	sc = sweep();
+	sc = sweep(a,b,x);
 
 	if(sc){
-	 for(int i = 0;i<N; i++) printf("x[%d] = %10.4f \n",i+1,x[i]);
+		for(i = 0;i<N; i++) 
+		{
+			printf("x[%d] = %10.4f \n",i+1,x[i]);
+		}
 	}
 	 else
 	{
@@ -34,25 +41,17 @@ return 0;
 }
 
 
-
-
-
-
-
-
-
-
-void swap(float *wk1, float *wk2){
-    float w;
+void swap(double *wk1, double *wk2){
+    double w;
     w = *wk1;
     *wk1 =*wk2;
 	*wk2 = w;
 }
 
-int sweep()
+int sweep(double a[][N], double b[], double x[])
 {
 	int i=0,j=0,k=0,ik=0;
-	float ak,aik,p;
+	double ak,aik;
 	
 	for(k=0;k<N;k++)
 	{
@@ -88,35 +87,3 @@ int sweep()
 	for(k=0; k<N; k++) x[k]=b[k];
 	return 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
