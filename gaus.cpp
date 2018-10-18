@@ -16,11 +16,11 @@ int main (void){
 
 	int sc;
 	int i;
-	double a[N][N] ={ {1,2,-2},
-		 {2,-2,5},
-		 {-1,1,3} };
+	double a[N][N] ={ {2,3,1},
+		 {4,1,-3},
+		 {-1,2,1} };
 		  		 
-	double b[N] = {-3,6,8};
+	double b[N] = {2,3,4};
 	double x[N];
 	
 	sc = sweep(a,b,x);
@@ -68,7 +68,7 @@ int sweep(double a[][N], double b[], double x[])
 			else
 			{
 				printf("pibot is zero\n");
-				return -1;
+				return 1;
 			}
 		}
 
