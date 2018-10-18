@@ -25,7 +25,7 @@ int main (void){
 	
 	sc = sweep(a,b,x);
 
-	if(sc){
+	if(sc == 0){
 		for(i = 0;i<N; i++) 
 		{
 			printf("x[%d] = %10.4f \n",i+1,x[i]);
@@ -85,5 +85,5 @@ int sweep(double a[][N], double b[], double x[])
 		}
 	}
 	for(k=0; k<N; k++) x[k]=b[k];
-	return 1;
+	return 0;
 }
